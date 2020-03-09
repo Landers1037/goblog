@@ -13,8 +13,8 @@ package article
  */
 
 import (
-	"cloudp/models"
-	"cloudp/pkg/err"
+	"cloudp/models/article"
+	"cloudp/utils/err"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -30,7 +30,7 @@ func Gettags(c *gin.Context)  {
 	}
 	//其他的query参数
 	code := err.SUCCESS
-	data := models.Gettags()
+	data := article.Gettags()
 	c.JSON(http.StatusOK,gin.H{
 		"code": code,
 		"msg": err.GetMsg(code),

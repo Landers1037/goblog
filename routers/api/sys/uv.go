@@ -7,12 +7,12 @@ Name: cloudp
 package sys
 
 import (
-	"cloudp/models"
+	"cloudp/models/sys"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
 
 func GetUv(c *gin.Context)  {
-	uv :=  models.GetuvFromdb()
+	uv :=  sys.GetuvFromdb()
 	c.JSON(http.StatusOK,uv)
 }

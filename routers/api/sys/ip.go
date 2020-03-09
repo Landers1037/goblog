@@ -7,7 +7,7 @@ Name: cloudp
 package sys
 
 import (
-	"cloudp/pkg/cmd"
+	"cloudp/utils/cmd"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )

@@ -8,7 +8,7 @@ package middleware
 //基于referer的简单验证
 
 import (
-	"cloudp/pkg/settings"
+	"cloudp/utils/settings"
 	"github.com/gin-gonic/gin"
 	"strings"
 )

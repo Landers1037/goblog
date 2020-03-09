@@ -1,8 +1,8 @@
 package main
 
 import (
-	"cloudp/pkg/settings"
 	"cloudp/routers"
+	"cloudp/utils/settings"
 	"fmt"
 	"net/http"
 )

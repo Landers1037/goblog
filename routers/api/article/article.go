@@ -7,8 +7,8 @@ Name: cloudp
 package article
 ////文章列表api
 import (
-	"cloudp/models"
-	"cloudp/pkg/err"
+	"cloudp/models/article"
+	"cloudp/utils/err"
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"os"
@@ -20,7 +20,7 @@ func Getarticle(c *gin.Context){
 	//文件名称唯一且等于本地的文件名
 	name := c.Query("name")
 	if name != ""{
-		data := models.Getarticle(name)
+		data := article.Getarticle(name)
 		code := err.SUCCESS
 		c.JSON(http.StatusOK,gin.H{
 			"code": code,
@@ -37,7 +37,7 @@ func Getarticle(c *gin.Context){
 
 func Getarticles(c *gin.Context)  {
 	//获取文章的列表
-	data := models.Getarticles()
+	data := article.Getarticles()
 	var length int = len(data)
 	page := c.Query("p")
 	if page!=""{
@@ -66,7 +66,7 @@ func Getarticles(c *gin.Context)  {
 func Getarticle_bytag(c *gin.Context)  {
 	//获取对应tag的文章
 	tag := c.Query("tag")
-	data := models.Getarticle_bytag(tag)
+	data := article.Getarticle_bytag(tag)
 	code := err.SUCCESS
 	c.JSON(http.StatusOK,gin.H{
 		"code" : code,

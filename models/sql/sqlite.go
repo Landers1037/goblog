@@ -7,7 +7,7 @@ Name: cloudp
 package sql
 
 import (
-	"cloudp/pkg/settings"
+	"cloudp/utils/settings"
 	"github.com/jinzhu/gorm"
 )
 

@@ -6,7 +6,9 @@ Name: cloudp
 */
 package middleware
 
-import "cloudp/models"
+import (
+	"cloudp/models/sys"
+)
 import "github.com/gin-gonic/gin"
 
 var tmp  = 0
@@ -15,7 +17,7 @@ func Uv() gin.HandlerFunc {
 		//设计一个缓存的栈
 		if tmp>5{
 			tmp = 0
-			models.AddUv(5)
+			sys.AddUv(5)
 		}else {
 			tmp++
 		}

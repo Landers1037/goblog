@@ -38,7 +38,7 @@ func init()  {
 
 func loadMode()  {
 	//决定debug模式的开关
-	RunMode = Cfg.Section("").Key("RUN_MODE").MustString("debug")
+	RunMode = Cfg.Section("mode").Key("RUN_MODE").MustString("release")
 	//muststring 当配置不存在时所返回的默认值
 }
 

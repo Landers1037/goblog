@@ -15,7 +15,7 @@ import (
 	"log"
 )
 
-var db *gorm.DB
+var THISdb *gorm.DB
 
 type Model struct {
 	ID int `gorm:"primary_key" json:"id"`
@@ -32,16 +32,16 @@ func init() {
 	//	return tablePrefix + defaultTableName
 	//}
 	//使用sqlite
-	db,err = sql.Sqlite()
+	THISdb,err = sql.Sqlite()
 	if err != nil {
 		log.Println(err)
 	}
 
-	db.SingularTable(true)
-	db.DB().SetMaxIdleConns(10)
-	db.DB().SetMaxOpenConns(100)
+	THISdb.SingularTable(true)
+	THISdb.DB().SetMaxIdleConns(10)
+	THISdb.DB().SetMaxOpenConns(100)
 }
 
 func CloseDB() {
-	defer db.Close()
+	defer THISdb.Close()
 }
