@@ -1,0 +1,19 @@
+{
+  "compile_entry": "app.go",
+  "app_info": {
+    "name": "blog",
+    "id": "app_blog",
+    "version": "1.23",
+    "description": "go blog with vue"
+  },
+  "workdir": {
+    "root": "/home/apps",
+    "log": "."
+  },
+  "config": {
+    "port": 10011
+  },
+  "cmd": {
+    "start": "./app_jjservice"
+  }
+}
